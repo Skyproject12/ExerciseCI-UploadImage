@@ -1,0 +1,42 @@
+< saat kalian ingin mengelink 
+  -> nama_controler/nama_function/$1 
+  -> gunakan <a href="<?php echo base_url()?>"nama_controller/nama_function <?php echo $data->id ?>
+< saat kalian menggunakan form jangan pernah mengunkan <a href=""></a> sebagai button
+< jika kalian ingin menghilangkan index.php pada link http://localhost/codeigniter/index.php/create 
+  -> gunakan haccess dan hapus index.php pada 
+  -> config[index.php]
+< untuk tidak mereload halaman saat search kalian bisa gunakan ajax
+< jika terjadi error saat upload -> pastikan link tempat menyimpan gambar 
+  -> sudah benar 
+< jika suatu form tidak mau membaca function gunakan site_url()
+< jika ingin view kalian 
+  -> select semua data 
+  -> lalu get/get_where data 
+  -> tampung hasil get dalam variable 
+  -> buat percabangan if jika jumlah data lebih dari 0 
+  -> lalu buat foreach untuk menampung nilai  dari data dalam result() sebagai (as)  variable baru 
+  -> lalu tampung variable baru tersebut dalam variable baru (tampung[]) 
+  -> lalu return variable tersebut
+<jika ingin insert 
+  -> buat array list untuk menampung data yang ingin  di insert 
+  -> return array bersamaan dengan insert data sesuai dengan nama data base
+<jika ingin delete 
+  -> delete berdasarkan id 
+  -> $where=array('id'=>$id);
+  -> return $this->db->delete('namadatabase',$where); 
+<jika ingin update 
+  -> view data berdasarkan id 
+  -> tampung data di controler 
+  -> kirim tampungan di controler ke form dengan mengunkanan foreach dan $this->load->view('namafile', tampungan)
+  -> form open arahkan ke controller update(buat iput type hidden untuk id)
+  -> controller update mengambil data model update 
+  -> $id =url_title($this->input->post('id'))
+  -> $where= array ('id'=>$id)
+  -> mode update berisikan $this->db->update('namadatabase',$where)
+<jika ingin uplaod 
+  -> pertama beri syarat upload 
+  -> file_allowed->jpg,dan lainnya 
+  -> max_size->1024
+  -> $this->load->library('upload','$config');
+  -> selanjutnya liat di upload file page  
+ 
